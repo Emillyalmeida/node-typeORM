@@ -1,6 +1,16 @@
 import express, { Request, Response } from "express";
 import routeUser from "./routes/userRoutes";
 import "reflect-metadata";
+import { myDataSource } from "./app-data-source";
+
+myDataSource
+  .initialize()
+  .then(() => {
+    console.log("Data Source has been initialized!");
+  })
+  .catch((err) => {
+    console.error("Error during Data Source initialization:", err);
+  });
 
 const app = express();
 app.use(express.json());
