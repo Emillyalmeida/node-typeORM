@@ -1,7 +1,7 @@
 import express, { Request, Response } from "express";
 import routeUser from "./routes/userRoutes";
 import "reflect-metadata";
-import { myDataSource } from "./app-data-source";
+import myDataSource from "./app-data-source";
 
 myDataSource
   .initialize()
